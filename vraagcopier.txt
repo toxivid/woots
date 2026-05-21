@@ -1,0 +1,25 @@
+// ==UserScript==
+// @name         text copier woods 1.0
+// @namespace    http://tampermonkey.net/
+// @version      2026-05-21
+// @description  woots question copier
+// @author       toxivid
+// @match        https://app.woots.nl/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
+// @grant        GM_setClipboard
+// @grant        GM_xmlhttpRequest
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_deleteValue
+// @grant        GM_listValues
+// @grant        GM_addStyle
+// @grant        GM_notification
+// @grant        GM_openInTab
+// @grant        unsafeWindow
+// @grant        GM_download
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    (()=>{if(window.__copyPromptBound)return alert("Already active");window.__copyPromptBound=1;document.addEventListener("keydown",(e)=>{if(e.ctrlKey&&e.altKey&&e.key.toLowerCase()==="c"){const el=document.getElementsByClassName("redactor-content");if(el.length<5)return alert("Not enough elements");const q=el[1].innerText.trim(),o=[2,3,4].map(i=>el[i].innerText.trim()),p=`QUESTION:\n${q}\n\nOPTIONS:\nA) ${o[0]}\nB) ${o[1]}\nC) ${o[2]}`;const copy=t=>{navigator.clipboard?.writeText(t).catch(()=>{});const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");document.body.removeChild(a);};copy(p);console.log(p);}});alert("Ctrl+Alt+C copy enabled");})();
+})();
