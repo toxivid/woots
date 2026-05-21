@@ -1,1 +1,28 @@
+stap 1 instaleer deze folder als je dat niet hebt gedaan
+https://github.com/toxivid/woots/archive/refs/heads/main.zip
 
+open dan dit uitleg.txt bestand
+
+instaleer 3 extensies:
+
+https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
+voor code automatisch runnen
+
+
+https://chromewebstore.google.com/detail/merlin-ai/camppjleccjaphfdbohjdohecfnoikec
+ai is slecht maar goed genoeg om dit te kunnen doen en hij is gratis
+log in 
+
+
+https://chromewebstore.google.com/detail/audio-to-text-converter/lebniadafgfkobbnhflghloncamcedhp
+om de audiofragmenten om te zetten naar text
+log in (anders heb je maar 3 free uses)
+
+
+
+
+zoek in de folder naar
+"extensiescreenshot"
+ga daar heen en open
+"tampermonkey"
+die we zojuist hebben geinstalleerd
