@@ -3,12 +3,12 @@ maak een eigen google account (duurt 3 min)
 en als je inlogt op je chromebook log niet in op je school account maar op je google account
 
 
-stap 1 instaleer deze folder als je dat niet hebt gedaan
+als eerst instaleer deze folder als je dat niet hebt gedaan open deze link:
 https://github.com/toxivid/woots/archive/refs/heads/main.zip
 
-open dan dit uitleg.txt bestand
+open dan dit uitleg.txt bestand zodat we verder kunnen gaan
 
-instaleer 3 extensies:
+als eerst hebben we 3 extensies nodig:
 
 https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
 voor code automatisch runnen
