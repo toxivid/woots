@@ -1,3 +1,8 @@
+DIT WERKT NIET OP JE SCHOOL ACCOUNT
+maak een eigen google account (duurt 3 min)
+en als je inlogt op je chromebook log niet in op je school account maar op je google account
+
+
 stap 1 instaleer deze folder als je dat niet hebt gedaan
 https://github.com/toxivid/woots/archive/refs/heads/main.zip
 
@@ -30,3 +35,24 @@ klik "een nieuw script maken"
 nu krijg je een plek waar je kan typen verwijder alles en open het vraagcopier.txt bestand in deze folder
 kopieer alles en doe alles in de tampermonkey plek
 check screenshot "voorbeeld text copier woots"
+
+nu hebben we nog 1 bestand nodig
+doe alle stappen maar nu niet vraagcopier.txt maar inplaats daarvan videoinstaller.txt
+
+nu het gebruik:
+je komt aan bij de eerste vraag
+klik ctrl alt x
+open de audio text converter extensie
+sleep het bestand uit je downloads in the audio text coverter
+klik transcribe wacht 5 seconde en klaar
+kopieer de text
+sluit hem de audio text converter
+open de ai extensie
+klik ctrl v
+klik ctrl alt c  (kopieert de vragen nutteloos maar bespaart tijd)
+klik ctrl v
+klik enter binnen 3 seconde heeft ai je het antwoord gegeven vul het in en toe alles opnieuw
+
+als je laptop word ingenomen door de ict gaan ze erachter komen een docent komt er waarschijnlijk nooit achter
+
+dit werkt bij elke woots test
