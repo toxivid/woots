@@ -26,3 +26,7 @@ zoek in de folder naar
 ga daar heen en open
 "tampermonkey"
 die we zojuist hebben geinstalleerd
+klik "een nieuw script maken"
+nu krijg je een plek waar je kan typen verwijder alles en open het vraagcopier.txt bestand in deze folder
+kopieer alles en doe alles in de tampermonkey plek
+check screenshot "voorbeeld text copier woots"
