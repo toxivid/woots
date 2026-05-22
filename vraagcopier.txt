@@ -1,25 +1,73 @@
 // ==UserScript==
-// @name         text copier woods 1.0
+// @name         text copier woods 1.3
 // @namespace    http://tampermonkey.net/
-// @version      2026-05-21
-// @description  woots question copier
+// @version      2026-05-22
+// @description  Copy question + 3 answers
 // @author       toxivid
 // @match        https://app.woots.nl/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
 // @grant        GM_setClipboard
-// @grant        GM_xmlhttpRequest
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_deleteValue
-// @grant        GM_listValues
-// @grant        GM_addStyle
-// @grant        GM_notification
-// @grant        GM_openInTab
-// @grant        unsafeWindow
-// @grant        GM_download
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
-    (()=>{if(window.__copyPromptBound)return console.log("Already active");window.__copyPromptBound=1;document.addEventListener("keydown",(e)=>{if(e.ctrlKey&&e.altKey&&e.key.toLowerCase()==="c"){const el=document.getElementsByClassName("redactor-content");if(el.length<5)return console.log("Not enough elements");const q=el[1].innerText.trim(),o=[2,3,4].map(i=>el[i].innerText.trim()),p=`QUESTION:\n${q}\n\nOPTIONS:\nA) ${o[0]}\nB) ${o[1]}\nC) ${o[2]}`;const copy=t=>{navigator.clipboard?.writeText(t).catch(()=>{});const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");document.body.removeChild(a);};copy(p);console.log(p);}});console.log("Ctrl+Alt+C copy enabled");})();
+
+    if (window.__copyPromptBound) {
+        console.log("Already active");
+        return;
+    }
+
+    window.__copyPromptBound = true;
+
+    document.addEventListener("keydown", (e) => {
+
+        // Ctrl + Alt + C
+        if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "c") {
+
+            console.log("Ctrl+Alt+C detected");
+
+            // Pak de vraag div
+            const subquestion = document.querySelector(".quiz-subquestion");
+
+            if (!subquestion) {
+                console.log("Question div not found");
+                return;
+            }
+
+            // Alle redactor-content elementen binnen deze vraag
+            const texts = subquestion.querySelectorAll(".redactor-content");
+
+            console.log("Found:", texts.length);
+
+            // Minimaal vraag + 3 antwoorden
+            if (texts.length < 4) {
+                console.log("Not enough text elements");
+                return;
+            }
+
+            // Vraag
+            const question = texts[0].innerText.trim();
+
+            // Antwoorden
+            const answer1 = texts[1].innerText.trim();
+            const answer2 = texts[2].innerText.trim();
+            const answer3 = texts[3].innerText.trim();
+
+            // Eind tekst
+            const finalText =
+`QUESTION:
+${question}
+
+ANSWERS:
+A) ${answer1}
+B) ${answer2}
+C) ${answer3}`;
+
+            // Copy
+            GM_setClipboard(finalText);
+
+            console.log("Copied:\n", finalText);
+        }
+    });
+
+    console.log("Ctrl+Alt+C copy enabled");
 })();
