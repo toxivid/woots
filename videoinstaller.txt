@@ -21,5 +21,36 @@
 
 (function() {
     'use strict';
-    (()=>{if(window.__videoDLBound)return console.log("Already active");window.__videoDLBound=1;document.addEventListener("keydown",e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==="x"){const v=document.getElementsByClassName("responsive-video")[0];if(!v)return console.log("Video not found");const url=v.src||v.currentSrc;if(!url)return console.log("No video src");const a=document.createElement("a");a.href=url;a.download="video.mp4";document.body.appendChild(a);a.click();document.body.removeChild(a);console.log("Downloading:",url);}});console.log("Ctrl+Shift+X will download video");})();
+
+    (() => {
+        if (window.__videoDLBound) return console.log("Already active");
+
+        window.__videoDLBound = 1;
+
+        document.addEventListener("keydown", e => {
+            // Ctrl + Alt + X
+            if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "x") {
+
+                const v = document.getElementsByClassName("responsive-video")[0];
+
+                if (!v) return console.log("Video not found");
+
+                const url = v.src || v.currentSrc;
+
+                if (!url) return console.log("No video src");
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "video.mp4";
+
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                console.log("Downloading:", url);
+            }
+        });
+
+        console.log("Ctrl+Alt+X will download video");
+    })();
 })();
